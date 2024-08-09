@@ -97,9 +97,13 @@ if __name__ == "__main__":
     dosages = get_unique_dosages(text4)
     frequencies = get_frequencies(text4)
     n=len(set(meds))
-    print(meds[0:n])
-    print(dosages[0:n])
-    print(frequencies[0:n])
-    print("Len of meds:", len(set(meds)))
+
+    meds=meds[0:n]
+    dosages=dosages[0:n]
+    frequencies=frequencies[0:n]
+
+    # "Len of meds:", len(set(meds))
+
+    print(meds, dosages, frequencies)
    
 
