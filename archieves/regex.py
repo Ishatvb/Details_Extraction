@@ -1,23 +1,9 @@
 import re
 
-
-# Section 1: Text Preprocessing
-
-# Cleaning text
-def clean_text(text):
-    """Clean the input text by removing extra whitespace."""
-    return re.sub(r'\s+', ' ', text).strip()
-
-
-# Section 2: Information Extraction
-
 # Function to find medicine name using regex
 def extract_medicine_name(text):
-    #pattern = r"\d+\)\s*([A-Z\s\dMG\+\(\)\/]+(?:TABLET|CAPSULE|SYRUP)?)"
-    pattern = r'\d+\)\s*(\w+)'
+    pattern = r"\d+\)\s*([A-Z\s\dMG\+\(\)\/]+(?:TABLET|CAPSULE|SYRUP)?)"
     medicine_names = re.findall(pattern, text)
-    # Get unique matches by converting the list to a set
-    unique_matches = set(matches)
     return medicine_names
 
 # Function to find dose using regex
