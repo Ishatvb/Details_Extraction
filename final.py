@@ -17,7 +17,7 @@ def get_unique_meds(text):
     """Extract unique medicine names from the text."""
     pattern = r'\d+\)\s*(\w+)'
     matches = re.findall(pattern, text)
-    return list(set(matches))
+    return list((matches))
 
 def get_unique_dosages(text):
     """Extract dosage information from the text."""
@@ -67,6 +67,7 @@ def process_prescription_text(text):
     dosages = get_unique_dosages(text)
     frequencies = get_frequencies(text)
 
+
     # Map extracted data
     return map_medicines(meds, dosages, frequencies)
 
@@ -86,5 +87,19 @@ if __name__ == "__main__":
     text4 = """
     R. &amp; R. Diabetic &amp; Thyroid Clinic DR. ABHISHEK SHRIVASTAVA MD, FACE, MMsc, DMsc Endocrinology Advisory Council Member Central Zone American College of Physicians India Chapter Editorial Board Member JEMR ЯК Clinic : Near Madan Mahal Thana, Opposite HP Petrol Pump, Napier Town, Jabalpur Timings : 12 Noon to 7:30 PM Regd. No. 31955 Thyroid, Diabetes Obesity Specialist Sunday Closed 0008286 : Mr. Naveen Beohar (59y, Male ) - 9074210058 Date &amp; Time 18-May-202401:52PM .BP 113/72 mmHg | Random Blood Sugar - RBS 381mg/dL | Glycosylated Hemoglobin - HbA1c 11.2% [18-May-2024] Total Cholesterol - 191mg/dL. Serum HDL Cholesterol - 36.4md dL. Serum Triglycerides - 367mg/dL, Serum Creatinine - 0.6mg/dL eGFR - Creatinine Clearance - 111.20mL/min/1.73m2. TSH (Thyroid Stimulating Hormone) - 5.95ulU/mL. T4 - 6.18nmol/L Complaints: PAIN IN LEGS FLATULANCE BURNING SENSATION IN LEGS Diagnosis: DIABETES MELLITUS TYPE 2. DYSLIPIDEMIA, NEUROPATHY R Medicine 1) GLIZIHENZ M 80MG/500MG TABLET Dosage Freq. - Duration 1-0-1 Daily - 30 Days Composition : Gliclazide 80 MG + Metformin 500MG Timings : 1 Before Breakfast, 1 Night - Before Food -2) DAPAHENZ S 10/100 TABLET 0-1-0 Daily - 30 Days Composition : Dapagliflozin 10 MG Sitagliptin 100 MG Timings : 1 Afternoon - Before Food 3) FORTIUS F 20 0-0-1 Daily - 30 Days Timings : 1 Night - After Food 4) RABENDA PLUS 1-0-0 Daily - 20 Days Composition. Levosuipinde 75 MG - Rabeprazole 20 MG Timings 1 Before Breakfast 5) NEURONE G 0-0-1 Daily - 30 Days Composition. IMETHYLCOBALAMIN 1500 MCG - PREGABALIN 75MG Timings 1- Before sleeping at night Dr. phishek Shrivastava Appointment time 10 AM to 6.00 PM Mob. : 6267089757, 9977369339, 7869022999, 9098215024 Please take an appointment. R. &amp; R. Diabetic &amp; Thyroid Clinic DR. ABHISHEK SHRIVASTAVA MD, FACE, MMsc, DMsc Endocrinology Advisory Council Member Central Zone American College of Physicians India Chapter Editorial Board Member JEMR ЯК Clinic: Near Madan Mahal Police Station, Opposite HP Petrol Pump, Napier Town, Jabalpur Timings: 12 Noon to 7:30 PM Regd. No. 31955 Thyroid, Diabetes Obesity Specialist Sunday Holiday 0008286 : Mr. Naveen Beohar ( 59y, Male ) - 9074210058 Date &amp; Time 18 - May - 202401: 52PM .BP 113/72 mmHg | Random Blood Sugar - RBS 381mg / dL | Glycosylated Hemoglobin - HbA1c 11.2 % [ 18 - May - 2024 ] Total Cholesterol - 191mg / dL . Serum HDL Cholesterol - 36.4md dL. Serum Triglycerides - 367mg / dL , Serum Creatinine - 0.6mg / dL eGFR - Creatinine Clearance - 111.20mL / min / 1.73m2 . TSH (Thyroid Stimulating Hormone) – 5.95ulU/mL. T4 - 6.18nmol / L Complaints : PAIN IN LEGS FLATULANCE BURNING SENSATION IN LEGS Diagnosis : DIABETES MELLITUS TYPE 2. DYSLIPIDEMIA , NEUROPATHY R Medicine 1 ) GLIZIHENZ M 80MG / 500MG TABLET Dosage Freq . - Duration 1-0-1 Daily - 30 Days Composition : Gliclazide 80 MG + Metformin 500MG Timings : 1 Before Breakfast, 1 Night - Before Dinner - 2) DAPAHENZ S 10/100 TABLET 0-1-0 Daily - 30 Days Composition : Dapagliflozin 10 MG Sitagliptin 100 MG Timings : 1 Afternoon - Before Dinner 3) FORTIUS F 20 0-0-1 Daily - 30 Days Timings : 1 Night - After Dinner 4) RABENDA PLUS 1-0-0 Daily - 20 Days Composition . Levosuipinde 75 MG - Rabeprazole 20 MG Timings 1 Before Breakfast 5) NEURONE G 0-0-1 Daily - 30 Days Composition. IMETHYLCOBALAMIN 1500 MCG - PREGABALIN 75MG Timings 1- Before sleeping at night Dr. Phishek Shrivastava Appointment time 10 AM to 6.00 PM Mob. : 6267089757, 9977369339, 7869022999, 9098215024 Please take an appointment.
     """
-    result = process_prescription_text(text1)
-    print(result)
+    result = process_prescription_text(text4)
+
+
+    # print(result)
+
+    meds = get_unique_meds(text4)
+    # print(meds)
+    dosages = get_unique_dosages(text4)
+    frequencies = get_frequencies(text4)
+    n=len(set(meds))
+    print(meds[0:n])
+    print(dosages[0:n])
+    print(frequencies[0:n])
+    print("Len of meds:", len(set(meds)))
+   
+
